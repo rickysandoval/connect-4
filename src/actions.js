@@ -5,11 +5,9 @@ export const startGame = playerOneColor => ({
     playerOneColor
 });
 
-export const makeMove = (player, column, row) => ({
+export const makeMove = (column) => ({
     type: types.MAKE_MOVE,
-    player,
-    column,
-    row
+    column
 });
 
 export const resetGame = () => ({ type: types.RESET_GAME});

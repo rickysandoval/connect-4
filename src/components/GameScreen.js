@@ -8,6 +8,13 @@ export class GameScreen extends React.Component {
         super(props);
     }
 
+    onColumnClick(columnIndex) {
+        let column = this.props.gameBoard[columnIndex];
+        if (column.includes(null)) {
+            this.props.onMakeMove(columnIndex);
+        }
+    }
+
     render() {
         let board = this.props.gameBoard;
         console.log(board);
@@ -19,7 +26,7 @@ export class GameScreen extends React.Component {
                 }
                 return <div className={className} key={rowIndex}><div className="space"></div></div>
             });
-            return <div className="game-board__column" key={columnIndex}>{boardColumn}</div>
+            return <div className="game-board__column" key={columnIndex} onClick={() => this.onColumnClick(columnIndex)}>{boardColumn}</div>
         });
         return(
             <div>

@@ -12,7 +12,7 @@ const render = () => ReactDOM.render(
     <App
         gameState={store.getState()}
         onStartGame={(playerOneColor) => store.dispatch(startGame(playerOneColor))}
-        onMakeMove={(player, column, row) => store.dispatch(makeMove(player, column, row))}
+        onMakeMove={(column) => store.dispatch(makeMove(column))}
         onResetGame={() => store.dispatch(resetGame())}
     />,
     document.getElementById('root')

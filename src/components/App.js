@@ -1,23 +1,25 @@
 import React, { Component } from 'react';
 import { StartScreen } from './StartScreen';
 import { GameScreen } from './GameScreen';
+import { BOARD_HEIGHT, BOARD_WIDTH } from '../constants/GameSettings';
 
 class App extends Component {
 
     render() {
-        console.log(this.props);
         let appScreen;
-        if (this.props.gameState.players[1] === null) {
+        let tieGame = this.props.gameState.turnsTaken === BOARD_HEIGHT * BOARD_WIDTH;
+
+        if (this.props.gameState.playerOne === null) {
             appScreen = <StartScreen onChooseColor={(color) => this.props.onStartGame(color)}/>;
-        } else if (this.props.gameState.outcome === null) {
+        } else if (this.props.gameState.winner === null && !tieGame) {
             appScreen =
                 <GameScreen 
                     nextPlayer={this.props.gameState.nextPlayer}
                     gameBoard={this.props.gameState.gameBoard}
-                    onMakeMove={(player, column, row) => this.props.onMakeMove(player, column, row)}
+                    onMakeMove={(column) => this.props.onMakeMove(column)}
                 />;
         } else {
-
+            appScreen = <div>{this.props.gameState.winner || 'Tie'}</div>
         }
 
         return (
