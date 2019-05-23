@@ -20,7 +20,6 @@ export class GameScreen extends React.Component {
         board = board.map((column, columnIndex) => {
             let boardColumn = column.slice().reverse().map((cell, rowIndex, wholeColumn) => {
                 let className = "game-board__cell";
-                console.log(cell);
                 let lastOpenColumn = cell === null && !wholeColumn[rowIndex-1] && (wholeColumn[rowIndex+1] || wholeColumn[rowIndex+1] === undefined) ;
                 if (lastOpenColumn) {
                     className += ' last-open-cell'

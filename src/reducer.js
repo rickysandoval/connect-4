@@ -21,7 +21,6 @@ const initialState = {
 
 
 export default function rootReducer(state = initialState, action) {
-    console.log(action);
     switch (action.type) {
         case START_GAME:
             if (!PLAYER_OPTIONS.includes(action.playerOneColor)) {
