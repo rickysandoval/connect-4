@@ -2,7 +2,7 @@
 ### Installation Instructions
 
 
-Install the dependencies and devDependencies and start the server.
+Install the dependencies and start the server.
 
 ```sh
 $ cd connect-4
