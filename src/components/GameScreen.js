@@ -44,6 +44,7 @@ export class GameScreen extends React.Component {
                 <div className={"game-board__wrapper " + `${this.props.nextPlayer.toLowerCase()}-turn`}>
                     {board}
                 </div>
+                <div className="game-board__reset"><span className="game-board__reset-button" onClick={()=>this.props.onReset()}>Reset Game</span></div>
             </div>
         );
     }

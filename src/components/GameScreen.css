@@ -71,3 +71,17 @@
         --space-between: 20px;
     }
 }
+
+.game-board__reset {
+    margin: 20px auto;
+    width: var(--board-width);
+    text-align: right;
+}
+.game-board__reset-button {
+    font-size: 12px;
+    cursor: pointer;
+    color: #999;
+}
+.game-board__reset-button:hover {
+    color: #ff8989;
+}

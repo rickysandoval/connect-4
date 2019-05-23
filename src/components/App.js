@@ -20,6 +20,7 @@ class App extends Component {
                     nextPlayer={this.props.gameState.nextPlayer}
                     gameBoard={this.props.gameState.gameBoard}
                     onMakeMove={(column) => this.props.onMakeMove(column)}
+                    onReset={() => this.props.onResetGame()}
                 />;
         } else {
             appScreen = <EndScreen winner={this.props.gameState.winner} onReset={() => this.props.onResetGame()}/>
