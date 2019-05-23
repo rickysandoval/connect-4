@@ -1,8 +1,6 @@
 import { createGameBoard } from "./utils/create-game-board";
 import { BOARD_WIDTH } from "./constants/GameSettings";
-import { START_GAME, RESET_GAME } from "./constants/ActionTypes";
-
-
+import { START_GAME, RESET_GAME, MAKE_MOVE } from "./constants/ActionTypes";
 
 const initialState = () => ({
     players: {
@@ -28,7 +26,7 @@ export default function rootReducer (state = initialState(), action) {
                     1: action.playerOneColor,
                     2: playerTwoColor
                 },
-                nextPlayer: 1
+                nextPlayer: action.playerOneColor
             };
         
         case MAKE_MOVE:
