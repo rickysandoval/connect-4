@@ -1,15 +1,20 @@
 :root {
     font-family: sans-serif;
-    --theme-color: #209b8f;
-    --theme-color-dark: #1b877c;
+    --theme-color: #23a05f;
+    --theme-color-dark: #1e9155;
     --border-color: #d6d6d6;
     --red: #db1818;
     --red-dark: #b51212;
+    --red-light: #ea6e6e;
+    --black: #333;
+    --black-light: #707070;
+
 }
 
 button {
     padding: 5px 15px;
     border-radius: 3px;
+    min-width: 75px;
     background: var(--theme-color);
     color: white;
     text-transform: uppercase;
@@ -53,6 +58,6 @@ button:focus {
 }
 
 .modal__controls button+button {
-    margin-left: 15px;
+    margin-left: 25px;
 
 }

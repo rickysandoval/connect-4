@@ -18,10 +18,15 @@ export class GameScreen extends React.Component {
     render() {
         let board = this.props.gameBoard;
         board = board.map((column, columnIndex) => {
-            let boardColumn = column.slice().reverse().map((cell, rowIndex) => {
+            let boardColumn = column.slice().reverse().map((cell, rowIndex, wholeColumn) => {
                 let className = "game-board__cell";
+                console.log(cell);
+                let lastOpenColumn = cell === null && !wholeColumn[rowIndex-1] && (wholeColumn[rowIndex+1] || wholeColumn[rowIndex+1] === undefined) ;
+                if (lastOpenColumn) {
+                    className += ' last-open-cell'
+                }
                 if (cell !== null) {
-                    className += " " + cell.toLowerCase();
+                    className += ' ' + cell.toLowerCase();
                 }
                 return <div className={className} key={rowIndex}><div className="space"></div></div>
             });
@@ -36,7 +41,7 @@ export class GameScreen extends React.Component {
                     }
                 `}</style>
                 <div className="game-board__title"><span className={this.props.nextPlayer.toLowerCase()}>{this.props.nextPlayer}</span> - Take Turn</div>
-                <div className="game-board__wrapper">
+                <div className={"game-board__wrapper " + `${this.props.nextPlayer.toLowerCase()}-turn`}>
                     {board}
                 </div>
             </div>

@@ -19,17 +19,6 @@ const initialState = {
     winner: null
 };
 
-// const initialState = {
-//     playerOne: 'Black',
-//     playerTwo: null,
-//     gameBoard: createGameBoard(BOARD_WIDTH, BOARD_HEIGHT),
-//     nextPlayer: null,
-//     turnsTaken: 0,
-//     winner: 'Black'
-// };
-
-
-
 
 export default function rootReducer(state = initialState, action) {
     console.log(action);
