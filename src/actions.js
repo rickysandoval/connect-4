@@ -1,7 +1,7 @@
 import * as types from './constants/ActionTypes';
 
 export const startGame = playerOneColor => ({
-    type: types.startGame,
+    type: types.START_GAME,
     playerOneColor
 });
 

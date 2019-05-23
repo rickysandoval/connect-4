@@ -1,8 +1,8 @@
 import { createGameBoard } from "./utils/create-game-board";
-import { BOARD_WIDTH } from "./constants/GameSettings";
+import { BOARD_WIDTH, PLAYER_OPTIONS } from "./constants/GameSettings";
 import { START_GAME, RESET_GAME, MAKE_MOVE } from "./constants/ActionTypes";
 
-const initialState = () => ({
+const initialState = {
     players: {
         1: null,
         2: null
@@ -10,9 +10,9 @@ const initialState = () => ({
     gameBoard: createGameBoard(BOARD_WIDTH),
     nextPlayer: null,
     outcome: null
-});
+};
 
-export default function rootReducer (state = initialState(), action) {
+export default function rootReducer (state = initialState, action) {
     switch (action.type) {
         case START_GAME:
             if (!PLAYER_OPTIONS.includes(action.playerOneColor)) {
@@ -33,6 +33,8 @@ export default function rootReducer (state = initialState(), action) {
             return state;
 
         case RESET_GAME:
-            return initialState();
+            return initialState;
+        default:
+            return state;
     }
 }

@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import App from "./components/App";
 import reducer from './reducer';
-import { makeMove, resetGame } from './actions';
-
+import { makeMove, resetGame, startGame } from './actions';
 
 const store = createStore(reducer)
 

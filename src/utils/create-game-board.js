@@ -4,4 +4,5 @@ export function createGameBoard(numColumns) {
     for (let col = 0; col < numColumns; col++) {
         board.push([]);
     }
+    return board;
 }
