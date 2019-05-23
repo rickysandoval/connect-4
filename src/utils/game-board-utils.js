@@ -31,5 +31,48 @@ export function gameBoardAfterMove(oldBoard, columnIndex, fill) {
 }
 
 export function checkBoardForWinner(gameBoard) {
+    let verticalWinner = checkBoardForWinnerVertical(gameBoard);
+    let horizontalWinner = checkBoardForWinnerHorizontal(gameBoard);
+    console.log(verticalWinner);
+    console.log(horizontalWinner);
     return null;
 }
+
+function checkBoardForWinnerVertical(gameBoard) {
+    let longestSequence = 1;
+    let sequenceValue = null;
+    for (let col = 0; col < gameBoard.length && longestSequence < 4; col++) {
+        for (let row = 0; row < gameBoard[col].length && longestSequence < 4; row++) {
+            let nextCell = gameBoard[col][row];
+         
+            if (nextCell && sequenceValue === nextCell) {
+                longestSequence++;
+            } else {
+                longestSequence = 1;
+                sequenceValue = nextCell;
+            }
+            
+        }
+    }
+    return longestSequence === 4 ? sequenceValue : null;
+}
+
+function checkBoardForWinnerHorizontal(gameBoard) {
+    let longestSequence = 1;
+    let sequenceValue = null;
+    for (let row = 0; row < gameBoard[0].length && longestSequence < 4; row++) {
+        for (let col = 0; col < gameBoard.length && longestSequence < 4; col++) {
+            let nextCell = gameBoard[col][row];
+         
+            if (nextCell && sequenceValue === nextCell) {
+                longestSequence++;
+            } else {
+                longestSequence = 1;
+                sequenceValue = nextCell;
+            }
+            
+        }
+    }
+    return longestSequence === 4 ? sequenceValue : null;
+}
+
