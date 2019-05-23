@@ -1,0 +1,51 @@
+:root {
+    font-family: sans-serif;
+    --theme-color: #209b8f;
+    --theme-color-dark: #1b877c;
+    --border-color: #d6d6d6;
+    --red: #db1818;
+}
+
+button {
+    padding: 5px 15px;
+    border-radius: 3px;
+    background: var(--theme-color);
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    border: none;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+button:hover {
+    background: var(--theme-color-dark);
+}
+
+button:focus {
+    outline: none;
+}
+
+.app-title {
+    font-size: 32px;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+.modal {
+    width: calc(100vw - 40px);
+    max-width: 250px;
+    margin: auto;
+    text-align: center;
+    padding: 50px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.modal__title {
+    margin-bottom: 40px;
+    font-size: 24px;
+    font-weight: 300;
+}

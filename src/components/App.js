@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { StartScreen } from './StartScreen';
 import { GameScreen } from './GameScreen';
 import { BOARD_HEIGHT, BOARD_WIDTH } from '../constants/GameSettings';
+import { EndScreen } from './EndScreen';
+import './App.css';
+
 
 class App extends Component {
 
@@ -19,12 +22,12 @@ class App extends Component {
                     onMakeMove={(column) => this.props.onMakeMove(column)}
                 />;
         } else {
-            appScreen = <div>{this.props.gameState.winner || 'Tie'}</div>
+            appScreen = <EndScreen winner={this.props.gameState.winner} onReset={() => this.props.onResetGame()}/>
         }
 
         return (
             <div>
-                <h1>Connect 4</h1>
+                <h1 className="app-title">Connect 4</h1>
                 {appScreen}
             </div>
         )

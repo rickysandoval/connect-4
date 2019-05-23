@@ -10,14 +10,24 @@ import {
 } from "./constants/ActionTypes";
 import { isValidMove, createGameBoard, gameBoardAfterMove, checkBoardForWinner } from "./utils/game-board-utils";
 
+// const initialState = {
+//     playerOne: null,
+//     playerTwo: null,
+//     gameBoard: createGameBoard(BOARD_WIDTH, BOARD_HEIGHT),
+//     nextPlayer: null,
+//     turnsTaken: 0,
+//     winner: null
+// };
+
 const initialState = {
-    playerOne: null,
+    playerOne: 'Black',
     playerTwo: null,
     gameBoard: createGameBoard(BOARD_WIDTH, BOARD_HEIGHT),
     nextPlayer: null,
     turnsTaken: 0,
-    winner: null
+    winner: 'Black'
 };
+
 
 
 
