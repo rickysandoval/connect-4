@@ -35,7 +35,7 @@ export class GameScreen extends React.Component {
                         --num-rows: ${BOARD_HEIGHT}
                     }
                 `}</style>
-                <div className="game-board__title">{this.props.nextPlayer} Player - Take Turn</div>
+                <div className="game-board__title"><span className={this.props.nextPlayer.toLowerCase()}>{this.props.nextPlayer}</span> - Take Turn</div>
                 <div className="game-board__wrapper">
                     {board}
                 </div>

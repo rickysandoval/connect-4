@@ -1,0 +1,14 @@
+.button__red {
+    background: var(--red);
+}
+.button__red:hover {
+    background: var(--red-dark);
+}
+
+.button__black {
+    background: #444;
+}
+
+.button__black:hover {
+    background: #333;
+}
