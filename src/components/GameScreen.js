@@ -17,7 +17,6 @@ export class GameScreen extends React.Component {
 
     render() {
         let board = this.props.gameBoard;
-        console.log(board);
         board = board.map((column, columnIndex) => {
             let boardColumn = column.slice().reverse().map((cell, rowIndex) => {
                 let className = "game-board__cell";
