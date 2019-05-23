@@ -1,14 +1,24 @@
 import { createGameBoard } from "./utils/create-game-board";
-import { BOARD_WIDTH, PLAYER_OPTIONS } from "./constants/GameSettings";
+import { BOARD_WIDTH, PLAYER_OPTIONS, BOARD_HEIGHT } from "./constants/GameSettings";
 import { START_GAME, RESET_GAME, MAKE_MOVE } from "./constants/ActionTypes";
+
+// const initialState = {
+//     players: {
+//         1: null,
+//         2: null
+//     },
+//     gameBoard: createGameBoard(BOARD_WIDTH, BOARD_HEIGHT),
+//     nextPlayer: null,
+//     outcome: null
+// };
 
 const initialState = {
     players: {
-        1: null,
-        2: null
+        1: 'Red',
+        2: 'Black'
     },
-    gameBoard: createGameBoard(BOARD_WIDTH),
-    nextPlayer: null,
+    gameBoard: createGameBoard(BOARD_WIDTH, BOARD_HEIGHT),
+    nextPlayer: 'Red',
     outcome: null
 };
 
